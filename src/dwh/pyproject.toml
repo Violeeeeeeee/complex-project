@@ -1,0 +1,15 @@
+[project]
+name = "gadgetbox-dwh"
+version = "0.1.0"
+requires-python = ">=3.12.6"
+dependencies = [
+    # Database Drivers
+    "asyncpg>=0.29.0",
+
+    # Data Quality Validation
+    "great-expectations>=0.18.0",
+
+    # Security & Env
+    "python-dotenv>=1.0.1",
+    "hvac>=2.1.0",
+]
