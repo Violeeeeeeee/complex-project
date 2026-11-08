@@ -13,15 +13,15 @@ Working draft from the Scrum Master. Everything in square brackets [...] must be
 | Developer | Abdullayev Dinmukhammed |
 | Developer | Vladyslav Humeniuk      |
 
-Scrum Master rotation order for 5 sprints (Sprint 0 counts too): Nazar Povod → Anton Krykhta → Vladyslav Humeniuk →
+Scrum Master rotation order for 6 sprints (Sprint 0 counts too): Nazar Povod → Anton Krykhta → Vladyslav Humeniuk →
 Abdullayev Dinmukhammed → Nazar Povod -> Anton Krykhta. Whoever has already been SM does not take the role again until everyone has had a turn.
 
 ### Communication
 
-- Main channel: Telegram / Discord / Teams. All project decisions are recorded here or in GitHub Projects.
+- Main channel: Telegram. All project decisions are recorded here or in GitHub Projects.
 - Urgent matters: post in the main channel marked URGENT. Reply within 24 hours.
 - If someone is silent for 48 hours without notice, the SM contacts them privately, then informs the instructor.
-- Communication language: Polish / English / mixed.
+- Communication language: English.
 - If you cannot attend a meeting, tell the team in advance in the chat.
 
 ### Working hours and meetings
@@ -44,7 +44,8 @@ Abdullayev Dinmukhammed → Nazar Povod -> Anton Krykhta. Whoever has already be
 - Every pull request is reviewed by at least one other person (code review).
 - Every task in GitHub Projects has an assignee, a story point estimate, a MoSCoW priority and an epic.
 - Each person's contribution must be visible in the repository history and in the task tool, so we move our own tasks on time.
-- Everyone works in at least two areas (project requirement). Split: [fill in after choosing areas].
+- Everyone works in at least two areas (project requirement). 
+- Split: Anton: 1 + 2 (helps 7, 8); Abdullayev Dinmukhammed: 4 + 5; Nazar Povod 3 + 8; Vladyslav Humeniuk 9 + 6.
 
 ### Conflict resolution
 
@@ -70,7 +71,7 @@ A story can enter the Sprint Backlog only if everything below is true:
 - It has acceptance criteria in Given/When/Then format (at least 2).
 - It has a MoSCoW priority and an epic.
 - It is estimated in story points (Planning Poker, Fibonacci scale).
-- Its size is at most [8] story points, otherwise it must be split.
+- Its size is at most 8 story points, otherwise it must be split.
 - Dependencies (data, other stories) are clear and do not block the start.
 - The team understands the story and questions to the PO have been answered.
 - It is linked to a requirement from the catalog (FR/NFR) so the traceability matrix stays complete.
