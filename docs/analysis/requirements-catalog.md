@@ -22,7 +22,7 @@ Sprint 0 | Requirements analysis | MoSCoW prioritisation
 
 | Category | Requirements | Indicative SP | Share of total SP | Project limit | Check |
 |--------------|---------------|---------------|------------------|----------------------|----------------|
-| Must | 24 | 130 | 58.3% | max 60% | OK |
+| Must | 26 | 136 | 57.9% | max 60% | OK |
 | Should | 13 | 46 | 20.6% | about 20% | OK |
 | Could | 7 | 47 | 21.1% | about 20% (buffer) | OK |
 | Won't | 4 | 0 | 0% | 0% | OK |
@@ -72,6 +72,9 @@ Could items (47 SP) are a buffer. A 4-person team will realistically deliver onl
 | FR-36 | **Build or modify the online shop.** Build or modify the online shop itself. | Business PO | Won't | EP-09 | - | The project delivers analytics, not the transactional shop. |
 | FR-37 | **Real-time streaming ingestion.** Streaming (real-time) ingestion of web events. | E-commerce Manager | Won't | EP-09 | - | Batch loading meets every stated reporting need; streaming adds major infrastructure effort. |
 
+| FR-38 | **Split‑shipment cost calculation (margin).** Capture per‑parcel delivery cost to support margin calculation. | Logistics & Warehouse Manager | Could | EP-05 | 4 | Detailed cost calculation deferred to later sprint. |
+| FR-39 | **Data source format specifications.** Define formats: relational DB for shop, JSON for web analytics and carrier APIs, CSV for ERP/WMS exports. | Business PO | Should | EP-06 | 2 | Ensures correct ingest pipelines.
+| FR-40 | **Granularity specification (SKU level).** Ensure all fact tables use SKU as the lowest grain, with dimensions for category, subcategory, product, brand. | Business PO | Must | EP-02 | 3 | Aligns data model with reporting requirements.
 ## 4. Non-functional requirements
 
 | ID | Requirement | Source | MoSCoW | Epic | SP | Justification |

@@ -269,3 +269,13 @@ Changes are tracked by the Git history of this file. Record notable versions her
 | Version | Date | Change | Author |
 |----------|-----------------|-----------------------------------------------------|--------------------|
 | 0.1 | 2026-10-12 | First draft from the project brief (hypotheses). | [PO name] |
+
+## 4. Updated coverage with new requirements (Этап 4)
+
+- **R‑08 (Incremental loading)** – primarily supports **S2 (E‑commerce Manager)** and **S4 (Logistics & Warehouse Manager)** for timely order and event data.
+- **R‑13 (Row‑level security)** – directly impacts **S1 (Owner / CEO)** (overall data access governance) and **S3 (Category Manager)** (restricted view of categories).
+- **FR‑38 (Split‑shipment cost calculation)** – aligns with **S4 (Logistics & Warehouse Manager)** for margin analysis.
+- **FR‑39 (Data source format specifications)** – relevant for **S2 (E‑commerce Manager)**, **S4 (Logistics & Warehouse Manager)** and **S5 (Online Marketing Specialist)** as they consume different source formats.
+- **FR‑40 (SKU‑level granularity specification)** – essential for **S3 (Category Manager)**, **S2 (E‑commerce Manager)** and **S1 (Owner / CEO)** to ensure consistent reporting.
+
+These additions do not introduce new stakeholder roles but clarify the linkage between existing stakeholders and the new functional requirements introduced in Этап 3.
