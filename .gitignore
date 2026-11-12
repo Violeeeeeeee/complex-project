@@ -42,3 +42,5 @@ cache.abf
 .DS_Store
 Thumbs.db
 ~$*
+
+docs/export/
