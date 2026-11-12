@@ -13,7 +13,7 @@ stockouts and overstock. This project delivers the data warehouse, KPIs and repo
 
 | Name | Role | Main areas |
 |---|---|---|
-| [name] | Product Owner | Requirements, architecture |
+| Anton Krykhta | Product Owner | Requirements, architecture |
 | [name] | Developer / Scrum Master (rotating) | [areas] |
 | [name] | Developer / Scrum Master (rotating) | [areas] |
 | [name] | Developer / Scrum Master (rotating) | [areas] |
@@ -42,6 +42,9 @@ stockouts and overstock. This project delivers the data warehouse, KPIs and repo
 | `infrastructure` | Docker and environment setup |
 | `data` | Generated data (not committed) |
 | `reports` | BI model and report files |
+| `docs/adr` | Architecture decision records |
+| `docs/diagrams` | C4 diagrams, ERD, data lineage |
+| `docs/dictionary.md` | Data and KPI dictionary |
 
 ## Quick start
 
