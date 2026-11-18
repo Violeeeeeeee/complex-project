@@ -5,7 +5,7 @@ Sprint 0 | Backlog structure, GitHub Projects setup, Sprint 1 candidate stories
 |  |  |
 |-------------------------|---------------------------------------------------------------------------|
 | **Project** | GadgetBox - analytics solution for an online electronics store |
-| **Document owner** | Product Owner (team) - [your name] |
+| **Document owner** | [ВПИШИ СВОЁ ИМЯ] (Product Owner) |
 | **Last updated** | 2026-10-12 |
 | **Status** | Draft v0.1 |
 
@@ -195,7 +195,7 @@ Proposed commitment: US-01 to US-07 = **27 SP**; US-08 is a stretch item (3 SP).
 - **Epic / Requirement:** EP-04 / FR-38
 - **MoSCoW / Story points:** Could / 4
 - **Suggested area:** Reports / Analytics
-- **Dependencies:** Load carrier shipment statuses (US-07)
+- **Dependencies:** Load carrier shipment statuses (FR-27)
 
 **User story:** As a financial analyst, I want per‑parcel delivery cost captured so that margin calculations can include accurate shipping expenses.
 
@@ -223,7 +223,7 @@ Proposed commitment: US-01 to US-07 = **27 SP**; US-08 is a stretch item (3 SP).
 
 ### US-12: SKU‑level granularity specification
 
-- **Epic / Requirement:** EP-02 / FR-40
+- **Epic / Requirement:** EP-02 / FR-10
 - **MoSCoW / Story points:** Must / 3
 - **Suggested area:** Warehouse / Dimensional Model
 - **Dependencies:** Warehouse ERD (US-04)
@@ -237,22 +237,6 @@ Proposed commitment: US-01 to US-07 = **27 SP**; US-08 is a stretch item (3 SP).
 
 ---
 
-### US-09: Row‑level security configuration
-
-- **Epic / Requirement:** EP-05 / FR-25
-- **MoSCoW / Story points:** Should / 3
-- **Suggested area:** Security / Architecture
-- **Dependencies:** None
-
-**User story:** As a category manager, I want row‑level security so that I can see only the categories I am responsible for.
-
-**Acceptance criteria**
-1. Given a category manager logs into the BI tool, When they view the assortment report, Then they see only data for their assigned categories.
-2. Given the RLS rules are defined, When a new category manager is added, Then the system automatically restricts their view to the appropriate categories.
-3. Given the RLS implementation, When an unauthorized user attempts to query another manager's categories, Then the query returns no data.
-
----
-
 ### US-08: KPI dictionary v0 (stretch)
 
 - **Epic / Requirement:** EP-08 / NFR-08
@@ -263,20 +247,8 @@ Proposed commitment: US-01 to US-07 = **27 SP**; US-08 is a stretch item (3 SP).
 **User story:** As a business user, I want a dictionary with the definition, formula and grain of each Must KPI, so that everybody calculates them the same way.
 
 **Acceptance criteria**
-1. Given the dictionary template, When I fill in a KPI entry, Then it includes a clear definition, formula and grain.
-2. Given the completed dictionary, When a new team member uses it, Then they can calculate the KPI without asking for clarification.
-
-
-- **Epic / Requirement:** EP-08 / NFR-08
-- **MoSCoW / Story points:** Should / 3
-- **Suggested area:** Requirements / BI
-- **Dependencies:** Interview S1 (finance and owner).
-
-**User story:** As a business user, I want a dictionary with the definition, formula and grain of each Must KPI, so that everybody calculates them the same way.
-
-**Acceptance criteria**
-1. Given the dictionary template, When I fill in a KPI entry, Then it includes a clear definition, formula and grain.
-2. Given the completed dictionary, When a new team member uses it, Then they can calculate the KPI without asking for clarification.
+1. Given the dictionary, When I look up net sales, AOV, gross margin, conversion rate and return rate, Then each has definition, formula, source tables and owner.
+2. Given the dictionary, When it is reviewed by the PO and the Financial Controller role, Then the approved wording is recorded.
 
 ---
 
@@ -294,30 +266,17 @@ Proposed commitment: US-01 to US-07 = **27 SP**; US-08 is a stretch item (3 SP).
 2. Given the RLS rules are defined, When a new category manager is added, Then the system automatically restricts their view to the appropriate categories.
 3. Given the RLS implementation, When an unauthorized user attempts to query another manager's categories, Then the query returns no data.
 
-
-- **Epic / Requirement:** EP-08 / NFR-08
-- **MoSCoW / Story points:** Should / 3
-- **Suggested area:** Requirements / BI
-- **Dependencies:** Interview S1 (finance and owner).
-
-**User story:** As a business user, I want a dictionary with the definition, formula and grain of each Must KPI, so that everybody calculates them the same way.
-
-**Acceptance criteria**
-
-1. Given the dictionary, When I look up net sales, AOV, gross margin, conversion rate and return rate, Then each has definition, formula, source tables and owner.
-2. Given the dictionary, When it is reviewed by the PO and the Financial Controller role, Then the approved wording is recorded.
-
 ## 4. MoSCoW proportion check
 
 The project limits the effort per category to: Must at most 60%, Should about 20%, Could about 20%, Won't 0%. The figures are calculated from the indicative sizes in the [requirements catalog](../analysis/requirements-catalog.md).
 
 | Category | Indicative SP | Share | Limit | Status |
 |--------------------|--------------------|------------------|--------------------|----------------------|
-| Must | 130 | 58.3% | max 60% | Within limit |
-| Should | 46 | 20.6% | about 20% | Within range |
-| Could | 47 | 21.1% | about 20% | Within range |
+| Must | 130 | 56.8% | max 60% | Within limit |
+| Should | 48 | 21.0% | about 20% | Within range |
+| Could | 51 | 22.2% | about 20% | Within range |
 | Won't | 0 | 0% | 0% | Within limit |
-| **Total** | 223 | 100% |  |  |
+| **Total** | 229 | 100% |  |  |
 
 Sprint 1 is naturally Must-heavy because it builds the foundation. The 60/20/20 proportions apply to the whole backlog. Ask the instructor whether the Sprint Planning template check (Must max 60%) should also be applied per sprint.
 

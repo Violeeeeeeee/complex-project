@@ -63,4 +63,3 @@ Each requirement is traced to the user story that implements it, then to the sol
 | NFR-10 | Reliability (idempotent loads) | Should | to be written |   |   | Backlog |
 | FR-38 | Split‑shipment cost calculation (margin) | Could | US-10 |   |   | Backlog |
 | FR-39 | Data source format specifications | Should | US-11 |   |   | Backlog |
-| FR-40 | SKU‑level granularity specification | Must | US-12 |   |   | Backlog |
