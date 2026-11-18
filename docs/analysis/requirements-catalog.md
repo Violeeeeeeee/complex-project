@@ -5,13 +5,13 @@ Sprint 0 | Requirements analysis | MoSCoW prioritisation
 |  |  |
 |-------------------------|---------------------------------------------------------------------------|
 | **Project** | GadgetBox - analytics solution for an online electronics store |
-| **Document owner** | Product Owner (team) - [your name] |
+| **Document owner** | [ВПИШИ СВОЁ ИМЯ] (Product Owner) |
 | **Last updated** | 2026-10-12 |
 | **Status** | Draft v0.1 |
 
 ## 1. How to read this catalog
 
-- The catalog contains **37 functional (FR)** and **11 non-functional (NFR)** requirements. The project minimum is 25 FR and 8 NFR.
+- The catalog contains **39 functional (FR)** and **11 non-functional (NFR)** requirements. The project minimum is 25 FR and 8 NFR.
 - It starts from the baseline list R-01 to R-23 and NFR-01 to NFR-09 of the project brief. Large items were split into smaller requirements, and new items were added (FR-01/02 synthetic data, FR-08 unification, NFR-10, NFR-11).
 - **Source** is the stakeholder role that needs the requirement. These sources are hypotheses until the interviews confirm them; "Business PO" means the requirement comes from the course brief.
 - **SP** is an indicative size in story points set by the Product Owner for the proportion check. It will be replaced by the team estimate from Planning Poker.
@@ -22,13 +22,13 @@ Sprint 0 | Requirements analysis | MoSCoW prioritisation
 
 | Category | Requirements | Indicative SP | Share of total SP | Project limit | Check |
 |--------------|---------------|---------------|------------------|----------------------|----------------|
-| Must | 26 | 136 | 57.9% | max 60% | OK |
-| Should | 13 | 46 | 20.6% | about 20% | OK |
-| Could | 7 | 47 | 21.1% | about 20% (buffer) | OK |
+| Must | 24 | 130 | 56.8% | max 60% | OK |
+| Should | 14 | 48 | 21.0% | about 20% | OK |
+| Could | 8 | 51 | 22.2% | about 20% (buffer) | OK |
 | Won't | 4 | 0 | 0% | 0% | OK |
-| **Total** | 48 | 223 | 100% |  |  |
+| **Total** | 50 | 229 | 100% |  |  |
 
-Could items (47 SP) are a buffer. A 4-person team will realistically deliver only a part of them.
+Could items (51 SP) are a buffer. A 4-person team will realistically deliver only a part of them.
 
 ## 3. Functional requirements
 
@@ -43,7 +43,7 @@ Could items (47 SP) are a buffer. A 4-person team will realistically deliver onl
 | FR-07 | **Data cleaning and validation.** Clean and validate incoming data (duplicate orders, inconsistent SKUs, missing purchase costs, invalid statuses) and write every rejected record to a reject log with the reason. | Financial Controller | Must | EP-01 | 8 | Management cannot use numbers it does not trust. |
 | FR-08 | **Product and customer unification.** Unify product records across shop, marketplace and ERP via SKU/EAN mapping (product, variant, SKU, bundles) and unify customer identity across channels. | Category Manager | Must | EP-01 | 8 | Without a common product key, sales, margin and stock cannot be combined. |
 | FR-09 | **Data-quality tests.** Run at least 10 automated data-quality rules at every load (e.g. stock >= 0, shipment not before order, sum of lines = order value) and store the results. | Financial Controller | Must | EP-01 | 5 | Mandatory requirement and the basis for trusting every KPI. |
-| FR-10 | **Dimensional model.** Build a dimensional model with at least 3 fact tables of different grain (including a daily inventory snapshot), at least 5 dimensions (date, product, customer, channel, warehouse/carrier) and an explicitly documented grain for each fact. | Business PO | Must | EP-02 | 8 | The core of the solution and a pass condition. |
+| FR-10 | **Dimensional model.** Build a dimensional model with at least 3 fact tables of different grain (including a daily inventory snapshot; SKU as the lowest grain for product-related facts), at least 5 dimensions (date, product with hierarchy: category, subcategory, product, variant, SKU and brand, customer, channel, warehouse/carrier) and an explicitly documented grain for each fact. | Business PO | Must | EP-02 | 8 | The core of the solution and a pass condition. |
 | FR-11 | **SCD Type 2.** Track the history of product purchase cost and list price (or customer segment) as a Type 2 slowly changing dimension. | Financial Controller | Must | EP-02 | 5 | Margin is only correct if the cost valid at the time of sale is used. |
 | FR-12 | **Net sales and order count.** Measures for net sales (after discounts, excluding VAT and delivery) and number of orders, correct for any period, channel, category, brand and product. | Owner / CEO | Must | EP-03 | 5 | The basic measure on which all other KPIs build. |
 | FR-13 | **Average order value (AOV).** AOV = net sales / number of orders, by the same dimensions. | E-commerce Manager | Must | EP-03 | 2 | A required base KPI, cheap once FR-12 exists. |
@@ -71,10 +71,8 @@ Could items (47 SP) are a buffer. A 4-person team will realistically deliver onl
 | FR-35 | **Real-time recommendation engine.** Product recommendation engine running in real time on the website. | E-commerce Manager | Won't | EP-09 | - | Real-time ML serving and storefront integration are out of scope. |
 | FR-36 | **Build or modify the online shop.** Build or modify the online shop itself. | Business PO | Won't | EP-09 | - | The project delivers analytics, not the transactional shop. |
 | FR-37 | **Real-time streaming ingestion.** Streaming (real-time) ingestion of web events. | E-commerce Manager | Won't | EP-09 | - | Batch loading meets every stated reporting need; streaming adds major infrastructure effort. |
-
-| FR-38 | **Split‑shipment cost calculation (margin).** Capture per‑parcel delivery cost to support margin calculation. | Logistics & Warehouse Manager | Could | EP-05 | 4 | Detailed cost calculation deferred to later sprint. |
-| FR-39 | **Data source format specifications.** Define formats: relational DB for shop, JSON for web analytics and carrier APIs, CSV for ERP/WMS exports. | Business PO | Should | EP-06 | 2 | Ensures correct ingest pipelines.
-| FR-40 | **Granularity specification (SKU level).** Ensure all fact tables use SKU as the lowest grain, with dimensions for category, subcategory, product, brand. | Business PO | Must | EP-02 | 3 | Aligns data model with reporting requirements.
+| FR-38 | **Split‑shipment cost calculation (margin).** Capture per‑parcel delivery cost to support margin calculation. | Logistics & Warehouse Manager | Could | EP-04 | 4 | Detailed cost calculation deferred to later sprint. |
+| FR-39 | **Data source format specifications.** Define formats: relational DB for shop, JSON for web analytics and carrier APIs, CSV for ERP/WMS exports. | Business PO | Should | EP-01 | 2 | Ensures correct ingest pipelines. |
 ## 4. Non-functional requirements
 
 | ID | Requirement | Source | MoSCoW | Epic | SP | Justification |
