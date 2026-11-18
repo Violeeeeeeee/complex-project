@@ -190,7 +190,110 @@ Proposed commitment: US-01 to US-07 = **27 SP**; US-08 is a stretch item (3 SP).
 2. Given the seeded defects, When the load runs, Then every rejected record is written to the reject log with a reason.
 3. Given the load result, When I check the load log, Then it records the start time, end time, rows read, rows loaded and rows rejected.
 
+### US-10: Split‑shipment cost calculation (margin)
+
+- **Epic / Requirement:** EP-04 / FR-38
+- **MoSCoW / Story points:** Could / 4
+- **Suggested area:** Reports / Analytics
+- **Dependencies:** Load carrier shipment statuses (US-07)
+
+**User story:** As a financial analyst, I want per‑parcel delivery cost captured so that margin calculations can include accurate shipping expenses.
+
+**Acceptance criteria**
+1. Given an order with multiple shipments, When the shipment data is loaded, Then each parcel’s cost is stored in the margin fact table.
+2. Given the margin report, When I view it, Then the shipping cost component reflects the summed per‑parcel costs.
+3. Given the cost calculation, When a new shipment is added, Then the margin recomputes automatically.
+
+---
+
+### US-11: Data source format specifications
+
+- **Epic / Requirement:** EP-01 / FR-39
+- **MoSCoW / Story points:** Should / 2
+- **Suggested area:** Data Integration
+- **Dependencies:** None
+
+**User story:** As a data engineer, I want a documented specification of source data formats (relational DB, JSON, CSV) so that ingestion pipelines are built correctly.
+
+**Acceptance criteria**
+1. Given the specification document, When a developer implements a loader, Then they can reference the correct format definitions.
+2. Given the spec, When a new source is added, Then the document can be extended with the new format details.
+
+---
+
+### US-12: SKU‑level granularity specification
+
+- **Epic / Requirement:** EP-02 / FR-40
+- **MoSCoW / Story points:** Must / 3
+- **Suggested area:** Warehouse / Dimensional Model
+- **Dependencies:** Warehouse ERD (US-04)
+
+**User story:** As a data modeller, I want all fact tables to use SKU as the lowest grain, with dimensions for category, subcategory, product, brand, so that reporting is consistent.
+
+**Acceptance criteria**
+1. Given the dimensional model, When I inspect any fact table, Then its grain is documented as one row per SKU (and relevant time period).
+2. Given the model, When I generate a new KPI, Then it aggregates correctly at the SKU level.
+3. Given the documentation, When a new developer joins, Then they can understand the grain without ambiguity.
+
+---
+
+### US-09: Row‑level security configuration
+
+- **Epic / Requirement:** EP-05 / FR-25
+- **MoSCoW / Story points:** Should / 3
+- **Suggested area:** Security / Architecture
+- **Dependencies:** None
+
+**User story:** As a category manager, I want row‑level security so that I can see only the categories I am responsible for.
+
+**Acceptance criteria**
+1. Given a category manager logs into the BI tool, When they view the assortment report, Then they see only data for their assigned categories.
+2. Given the RLS rules are defined, When a new category manager is added, Then the system automatically restricts their view to the appropriate categories.
+3. Given the RLS implementation, When an unauthorized user attempts to query another manager's categories, Then the query returns no data.
+
+---
+
 ### US-08: KPI dictionary v0 (stretch)
+
+- **Epic / Requirement:** EP-08 / NFR-08
+- **MoSCoW / Story points:** Should / 3
+- **Suggested area:** Requirements / BI
+- **Dependencies:** Interview S1 (finance and owner).
+
+**User story:** As a business user, I want a dictionary with the definition, formula and grain of each Must KPI, so that everybody calculates them the same way.
+
+**Acceptance criteria**
+1. Given the dictionary template, When I fill in a KPI entry, Then it includes a clear definition, formula and grain.
+2. Given the completed dictionary, When a new team member uses it, Then they can calculate the KPI without asking for clarification.
+
+
+- **Epic / Requirement:** EP-08 / NFR-08
+- **MoSCoW / Story points:** Should / 3
+- **Suggested area:** Requirements / BI
+- **Dependencies:** Interview S1 (finance and owner).
+
+**User story:** As a business user, I want a dictionary with the definition, formula and grain of each Must KPI, so that everybody calculates them the same way.
+
+**Acceptance criteria**
+1. Given the dictionary template, When I fill in a KPI entry, Then it includes a clear definition, formula and grain.
+2. Given the completed dictionary, When a new team member uses it, Then they can calculate the KPI without asking for clarification.
+
+---
+
+### US-09: Row‑level security configuration
+
+- **Epic / Requirement:** EP-05 / FR-25
+- **MoSCoW / Story points:** Should / 3
+- **Suggested area:** Security / Architecture
+- **Dependencies:** None
+
+**User story:** As a category manager, I want row‑level security so that I can see only the categories I am responsible for.
+
+**Acceptance criteria**
+1. Given a category manager logs into the BI tool, When they view the assortment report, Then they see only data for their assigned categories.
+2. Given the RLS rules are defined, When a new category manager is added, Then the system automatically restricts their view to the appropriate categories.
+3. Given the RLS implementation, When an unauthorized user attempts to query another manager's categories, Then the query returns no data.
+
 
 - **Epic / Requirement:** EP-08 / NFR-08
 - **MoSCoW / Story points:** Should / 3

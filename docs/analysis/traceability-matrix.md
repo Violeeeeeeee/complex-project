@@ -32,6 +32,7 @@ Each requirement is traced to the user story that implements it, then to the sol
 | FR-17 | Management dashboard | Must | to be written |   |   | Backlog |
 | FR-18 | Assortment report | Must | to be written |   |   | Backlog |
 | FR-19 | Incremental loading | Should | to be written |   |   | Backlog |
+| R-08 | Incremental loading (baseline) | Should | FR-19 |   |   | Backlog |
 | FR-20 | Purchase funnel and abandoned carts | Should | to be written |   |   | Backlog |
 | FR-21 | Inventory report | Should | to be written |   |   | Backlog |
 | FR-22 | Logistics report | Should | to be written |   |   | Backlog |
@@ -60,4 +61,6 @@ Each requirement is traced to the user story that implements it, then to the sol
 | NFR-08 | Documentation (data and KPI dictionary) | Should | US-08 |   |   | Story drafted |
 | NFR-09 | Accessibility | Could | to be written |   |   | Backlog |
 | NFR-10 | Reliability (idempotent loads) | Should | to be written |   |   | Backlog |
-| NFR-11 | Architecture documentation | Must | US-03, US-05 |   |   | Story drafted |
+| FR-38 | Split‑shipment cost calculation (margin) | Could | US-10 |   |   | Backlog |
+| FR-39 | Data source format specifications | Should | US-11 |   |   | Backlog |
+| FR-40 | SKU‑level granularity specification | Must | US-12 |   |   | Backlog |
